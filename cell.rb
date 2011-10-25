@@ -16,4 +16,8 @@ class Cell
 			@value == CellValue::WHITE
 		end
 	end
+	
+	def is_occupied
+		return @value != CellValue::EMPTY
+	end
 end
