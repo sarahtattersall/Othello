@@ -12,6 +12,7 @@ class Game
   
   def play
     player = 1
+    puts @board.legal_move?(3, 4, @players[1])
     while @players.map{ |p| p.can_move?(@board) }.any?
       puts "Players can move!"
       @board.display_board

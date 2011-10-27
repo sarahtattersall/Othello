@@ -26,10 +26,14 @@ class Cell
   end
 
   def is_occupied?
-    return @value != nil
+    return @owner != nil
   end
-
+  
+  def owned_by?(p)
+	return @owner == p
+  end
+  
   def set_value(v)
-    @value = v
+    @owner = v
   end
 end
