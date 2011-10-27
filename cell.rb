@@ -6,11 +6,11 @@ class Cell
   end
 
   def inspect
-    case p
+    case @owner
     when nil
       return " "
     else
-      return "X"
+      return @owner.symbol
     end
   end
 
@@ -25,8 +25,8 @@ class Cell
     end
   end
 
-  def is_occupied
-    return @value != EMPTY
+  def is_occupied?
+    return @value != nil
   end
 
   def set_value(v)
