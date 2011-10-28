@@ -9,9 +9,9 @@ class Player
   def can_move?(board)
     for i in (0..(board.size-1))
       for j in (0..(board.size-1))
-		if board.legal_move?(i, j, self)
-			puts "#{i}, #{j}"
-		end
+		#if board.legal_move?(i, j, self)
+		#	puts "#{i}, #{j}"
+		#end
         return true if board.legal_move?(i, j, self)
       end
     end

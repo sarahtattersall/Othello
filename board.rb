@@ -17,24 +17,61 @@ class Board
   def place_piece(x, y, p)
     puts "Placing piece for player #{p} at #{x},#{y}"
     @board[x][y] = Cell.new(p)
-    puts @board[x][y].is_occupied?
-    display_board
-    #TODO work out which pieces to flip
+    pieces = []
+    for i in [-1,0,1]
+      for j in [-1,0,1]
+        to_flip = flip_pieces(x+i, y+j, i, j, p)
+        if to_flip.length != 0
+          for x,y in to_flip
+            @board[x][y].flip(p)
+          end
+        end
+      end 
+    #display_board
+    end
   end
   
   def legal_move?(x, y, p)
+    return false if @board[x][y].is_occupied?
     legal = false
-    [-1,0,1].each{ |i| [-1, 0, -1].each{ |j| legal |= find_piece(x+i, y+j, i, j, p)} }
+    for i in [-1,0,1]
+      for j in [-1,0,1]
+        if !(i == 0 and j == 0)
+          legal |= find_piece(x+i, y+j, i, j, p)
+        end
+      end
+    end 
+    #[-1,0,1].each{ |i| [-1, 0, -1].each{ |j| legal |= find_piece(x+i, y+j, i, j, p)} }
     return legal
   end
   
   def display_board
-    (0..@size).each do |i|
-      puts @board[i].inspect
+    puts "   0, 1, 2, 3, 4, 5, 6, 7"
+    (0..(@size-1)).each do |i|
+      puts "#{i} #{@board[i].inspect}"
     end
   end
 
+  def flip_pieces(x, y, x_offset, y_offset, p)
+    flip = []
+
+	if (x >= 0 and y >= 0 and x < @size and y < @size)
+		if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
+		  while( x >= 0 and y >= 0 and x < @size and y < @size )
+			return flip if @board[x][y].owned_by?(p)
+            flip << [x,y]
+			x += x_offset
+			y += y_offset
+		  end  
+		end
+	end
+	return []
+  end
+  
+  
+
   def find_piece(x, y, x_offset, y_offset, p)
+    #puts "#{x}, #{y}, #{x_offset}, #{y_offset}"
 	if (x >= 0 and y >= 0 and x < @size and y < @size)
 		if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
 		  while( x >= 0 and y >= 0 and x < @size and y < @size )

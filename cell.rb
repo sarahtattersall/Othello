@@ -14,15 +14,8 @@ class Cell
     end
   end
 
-  def flip
-    if @value == EMPTY
-      raise "Error trying to flip a cell without a piece on"
-    end
-    if @value == WHITE
-      @value = BLACK
-    else
-      @value == WHITE
-    end
+  def flip(p)
+    @owner = p
   end
 
   def is_occupied?

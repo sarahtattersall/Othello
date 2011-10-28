@@ -4,7 +4,7 @@ require './player.rb'
 class Game
   def initialize
     @board = Board.new
-    @board.display_board
+    #@board.display_board
     @players = [Player.new(Player::BLACK),
                 Player.new(Player::WHITE)]
     place_initial_pieces
@@ -12,13 +12,12 @@ class Game
   
   def play
     player = 1
-    puts @board.legal_move?(3, 4, @players[1])
     while @players.map{ |p| p.can_move?(@board) }.any?
       puts "Players can move!"
       @board.display_board
       p = @players[player]
       if p.can_move?(@board)
-        puts "Player #{p} can move"
+        puts "Player #{p.inspect} can move"
         x, y = get_move
         while !@board.legal_move?(x, y, p)
           puts "Can't go here"
