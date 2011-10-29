@@ -84,4 +84,14 @@ class Board
 	return false
   end
   
+  def get_board
+    @board
+  end
+
+  # For testing purposes only
+  def change_board( board )
+    @board = board
+  end
+    
+
 end
