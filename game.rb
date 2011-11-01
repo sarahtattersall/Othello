@@ -4,7 +4,6 @@ require './player.rb'
 class Game
   def initialize
     @board = Board.new
-    #@board.display_board
     @players = [Player.new(Player::BLACK),
                 Player.new(Player::WHITE)]
     place_initial_pieces
