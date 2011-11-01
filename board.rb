@@ -41,11 +41,10 @@ class Board
     for i in [-1,0,1]
       for j in [-1,0,1]
         if !(i == 0 and j == 0)
-          legal |= find_piece(x+i, y+j, i, j, p)
+          legal |= !get_flippable_pieces(x+i, y+j, i, j, p).empty?
         end
       end
-    end 
-    #[-1,0,1].each{ |i| [-1, 0, -1].each{ |j| legal |= find_piece(x+i, y+j, i, j, p)} }
+    end
     return legal
   end
 
@@ -70,22 +69,6 @@ class Board
       end
     end
     return []
-  end
-
-
-
-  def find_piece(x, y, x_offset, y_offset, p)
-    #puts "#{x}, #{y}, #{x_offset}, #{y_offset}"
-    if (x >= 0 and y >= 0 and x < @size and y < @size)
-      if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
-        while( x >= 0 and y >= 0 and x < @size and y < @size )
-          return true if @board[x][y].owned_by?(p)
-          x += x_offset
-          y += y_offset
-        end  
-      end
-    end
-    return false
   end
 
   def get_board
