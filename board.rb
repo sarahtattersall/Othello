@@ -17,10 +17,14 @@ class Board
   def place_piece(x, y, p)
     puts "Placing piece for player #{p} at #{x},#{y}"
     @board[x][y] = Cell.new(p)
+    flip_pieces(p)
+  end
+
+  def flip_pieces(p)
     pieces = []
     for i in [-1,0,1]
       for j in [-1,0,1]
-        to_flip = flip_pieces(x+i, y+j, i, j, p)
+        to_flip = get_flippable_pieces(x+i, y+j, i, j, p)
         if to_flip.length != 0
           for x,y in to_flip
             @board[x][y].flip(p)
@@ -52,7 +56,7 @@ class Board
     end
   end
 
-  def flip_pieces(x, y, x_offset, y_offset, p)
+  def get_flippable_pieces(x, y, x_offset, y_offset, p)
     flip = []
 
     if (x >= 0 and y >= 0 and x < @size and y < @size)
@@ -85,13 +89,12 @@ class Board
   end
 
   def get_board
-    @board
+    return @board
   end
 
   # For testing purposes only
   def change_board( board )
     @board = board
   end
-
 
 end
