@@ -74,7 +74,7 @@ class Board
   
   #TODO: this
   def in_bounds?(x, y)
-    return x >= 0 and y >= 0 and x < @size and y < @size
+    return x >= 0 && y >= 0 && x < @size && y < @size
   end
 
   def get_board
@@ -85,5 +85,4 @@ class Board
   def change_board( board )
     @board = board
   end
-
 end
