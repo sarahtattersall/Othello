@@ -79,9 +79,11 @@ class Board
   
   def valid_row?(x)
     return x >= 0 && x < @size
+  end
   
   def valid_col?(y)
     return y >= 0 && y < @size
+  end
     
   def get_board
     return @board
