@@ -15,7 +15,6 @@ class Board
   end
 
   def place_piece(x, y, p)
-    puts "Placing piece for player #{p} at #{x},#{y}"
     @board[x][y] = Cell.new(p)
     flip_pieces(x, y, p)
   end
@@ -48,7 +47,6 @@ class Board
     return legal
   end
   
-  #TODO: Clean this
   def display_board
     print "   "
     (0..(@size-1)).map{ |i| print "#{i+1}" + ((i < @size - 1) ? ", " : " ")}
