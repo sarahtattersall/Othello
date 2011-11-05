@@ -1,11 +1,11 @@
 require './board.rb'
-require './player.rb'
+require './human_player.rb'
 
 class Game
   def initialize
     @board = Board.new
-    @players = [Player.new(Player::BLACK),
-      Player.new(Player::WHITE)]
+    @players = [HumanPlayer.new(Player::BLACK),
+      HumanPlayer.new(Player::WHITE)]
       place_initial_pieces
     end
 
@@ -13,11 +13,9 @@ class Game
       player = 1
       while @players.map{ |p| p.can_move?(@board) }.any?
         p = @players[player]
-        
         @board.display_board
-        
         if p.can_move?(@board)
-          x, y = get_move(p)
+          x, y = p.get_move(@board)
           @board.place_piece(x, y, p)
         else
           puts "No available moves for player #{p}, skipping go"
@@ -28,6 +26,7 @@ class Game
     
     # Returns -1, -1 if input is invalid which ensures failure later 
     # tests in the code
+=begin
     def get_move(p)
       #TODO - Add error checking
       error_message = "Invalid move, please try again"
@@ -54,7 +53,7 @@ class Game
       
       return x - 1, y -1
     end
-
+=end
     def place_initial_pieces
       x = @board.size/2
       y = @board.size/2
