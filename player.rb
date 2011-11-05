@@ -23,10 +23,10 @@ class Player
   end
   
   def symbol
-    return (@color == WHITE)? "O" : "X"
+    return (@color == WHITE)? "X" : "O"
   end
   
   def to_s
-    return @color
+    return symbol
   end
 end

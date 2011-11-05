@@ -12,19 +12,21 @@ class Game
     def play
       player = 1
       while @players.map{ |p| p.can_move?(@board) }.any?
-        puts "Players can move!"
-        @board.display_board
         p = @players[player]
+        
+        @board.display_board
+        
         if p.can_move?(@board)
-          puts "Player #{p.inspect} can move"
           x, y = get_move
           while !@board.legal_move?(x, y, p)
-            puts "Can't go here"
+            puts "Invalid move, please try again"
             x, y = get_move
           end
           @board.place_piece(x, y, p)
+        else
+          puts "No available moves for player #{p}, skipping go"
         end
-        player = 1 - player #Swaps players
+        player = 1 - player
       end
     end
 
@@ -36,7 +38,7 @@ class Game
       x = (gets).to_i
       puts "col: "
       y = (gets).to_i
-      return x, y
+      return x-1, y-1
     end
 
     def place_initial_pieces

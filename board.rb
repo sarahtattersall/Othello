@@ -47,11 +47,12 @@ class Board
     end
     return legal
   end
-
+  
+  #TODO: Clean this
   def display_board
-    puts "   0, 1, 2, 3, 4, 5, 6, 7"
+    puts "   1, 2, 3, 4, 5, 6, 7, 8"
     (0..(@size-1)).each do |i|
-      puts "#{i} #{@board[i].inspect}"
+      puts "#{i+1} #{@board[i].inspect}"
     end
   end
 
