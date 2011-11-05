@@ -1,16 +1,17 @@
 require './board.rb'
 require './human_player.rb'
+require './ai_player.rb'
 
 class Game
   def initialize
     @board = Board.new
     @players = [HumanPlayer.new(Player::BLACK),
-      HumanPlayer.new(Player::WHITE)]
+      AIPlayer.new(Player::WHITE)]
       place_initial_pieces
     end
 
     def play
-      player = 1
+      player = 0
       while @players.map{ |p| p.can_move?(@board) }.any?
         p = @players[player]
         @board.display_board

@@ -59,7 +59,7 @@ class Board
     flip = []
     if in_bounds?(x, y)
       if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
-        while in_bounds?(x, y)
+        while in_bounds?(x, y) && @board[x][y].is_occupied?
           return flip if @board[x][y].owned_by?(p)
           flip << [x,y]
           x += x_offset
