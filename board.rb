@@ -74,9 +74,15 @@ class Board
   
   #TODO: this
   def in_bounds?(x, y)
-    return x >= 0 && y >= 0 && x < @size && y < @size
+    return valid_row?(x) && valid_row?(y)
   end
-
+  
+  def valid_row?(x)
+    return x >= 0 && x < @size
+  
+  def valid_col?(y)
+    return y >= 0 && y < @size
+    
   def get_board
     return @board
   end
