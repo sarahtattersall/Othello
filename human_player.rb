@@ -21,8 +21,6 @@ class HumanPlayer < Player
         break if board.legal_move?(x - 1 ,y - 1, self)
         puts error_message
       end while true
-      puts "Valid #{x}, #{y}"
-      
       return x - 1, y -1
     end
 
