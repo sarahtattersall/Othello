@@ -55,13 +55,13 @@ class Board
       puts "#{i+1} #{@board[i].inspect}"
     end
   end
-
+  
+  
   def get_flippable_pieces(x, y, x_offset, y_offset, p)
     flip = []
-
-    if (x >= 0 and y >= 0 and x < @size and y < @size)
+    if in_bounds?(x, y)
       if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
-        while( x >= 0 and y >= 0 and x < @size and y < @size )
+        while in_bounds?(x, y)
           return flip if @board[x][y].owned_by?(p)
           flip << [x,y]
           x += x_offset
@@ -70,6 +70,11 @@ class Board
       end
     end
     return []
+  end
+  
+  #TODO: this
+  def in_bounds?(x, y)
+    return x >= 0 and y >= 0 and x < @size and y < @size
   end
 
   def get_board
