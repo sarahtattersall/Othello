@@ -17,10 +17,10 @@ class Board
   def place_piece(x, y, p)
     puts "Placing piece for player #{p} at #{x},#{y}"
     @board[x][y] = Cell.new(p)
-    flip_pieces(p)
+    flip_pieces(x, y, p)
   end
 
-  def flip_pieces(p)
+  def flip_pieces(x, y, p)
     pieces = []
     for i in [-1,0,1]
       for j in [-1,0,1]
