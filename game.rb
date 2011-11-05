@@ -48,11 +48,13 @@ class Game
     end
 
     def place_initial_pieces
-      top_right = @board.size/2
-      @board.place_piece(top_right, top_right, @players[0])
-      @board.place_piece(top_right, top_right - 1, @players[1])
-      @board.place_piece(top_right - 1, top_right, @players[1])
-      @board.place_piece(top_right - 1, top_right - 1, @players[0])
+      x = @board.size/2
+      y = @board.size/2
+      
+      @board.place_piece(x, y, @players[0])
+      @board.place_piece(x -1, y, @players[1])
+      @board.place_piece(x, y - 1, @players[1])
+      @board.place_piece(x -1, y - 1, @players[0])
     end
 
     def get_board
