@@ -24,36 +24,6 @@ class Game
       end
     end
     
-    # Returns -1, -1 if input is invalid which ensures failure later 
-    # tests in the code
-=begin
-    def get_move(p)
-      #TODO - Add error checking
-      error_message = "Invalid move, please try again"
-      puts "Player #{p}, please enter your move:"
-      begin
-        
-        puts "row: "
-        x = (gets).to_i
-        if x == 0 || !@board.valid_row?(x)
-          puts error_message
-          next
-        end
-
-        puts "col: "
-        y = (gets).to_i
-        if y == 0 || !@board.valid_col?(y)
-          puts error_message
-          next
-        end
-        break if @board.legal_move?(x - 1 ,y - 1, p)
-        puts error_message
-      end while true
-      puts "Valid #{x}, #{y}"
-      
-      return x - 1, y -1
-    end
-=end
     def place_initial_pieces
       x = @board.size/2
       y = @board.size/2
