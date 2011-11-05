@@ -17,10 +17,10 @@ class Game
         @board.display_board
         
         if p.can_move?(@board)
-          x, y = get_move
+          x, y = get_move(p)
           while !@board.legal_move?(x, y, p)
             puts "Invalid move, please try again"
-            x, y = get_move
+            x, y = get_move(p)
           end
           @board.place_piece(x, y, p)
         else
@@ -29,15 +29,21 @@ class Game
         player = 1 - player
       end
     end
-
-    def get_move
+    
+    # Returns -1, -1 if input is invalid which ensures failure later 
+    # tests in the code
+    def get_move(p)
       #TODO - Add error checking
-
-      puts "Please enter you move:"
+      puts "Player #{p}, please enter your move:"
+      
       puts "row: "
       x = (gets).to_i
+      return -1, -1 if x == 0
+      
       puts "col: "
       y = (gets).to_i
+      return -1, -1 if y == 0
+      
       return x-1, y-1
     end
 
