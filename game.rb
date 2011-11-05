@@ -44,7 +44,7 @@ class Game
       y = (gets).to_i
       return -1, -1 if y == 0
       
-      return x-1, y-1
+      return x - 1, y - 1
     end
 
     def place_initial_pieces
@@ -52,7 +52,7 @@ class Game
       y = @board.size/2
       
       @board.place_piece(x, y, @players[0])
-      @board.place_piece(x -1, y, @players[1])
+      @board.place_piece(x - 1, y, @players[1])
       @board.place_piece(x, y - 1, @players[1])
       @board.place_piece(x -1, y - 1, @players[0])
     end
