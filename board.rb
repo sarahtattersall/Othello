@@ -50,10 +50,10 @@ class Board
   
   #TODO: Clean this
   def display_board
-    puts "   1, 2, 3, 4, 5, 6, 7, 8"
-    (0..(@size-1)).each do |i|
-      puts "#{i+1} #{@board[i].inspect}"
-    end
+    print "   "
+    (0..(@size-1)).map{ |i| print "#{i+1}" + ((i < @size - 1) ? ", " : " ")}
+    print "\n"
+    (0..(@size-1)).map { |i| puts "#{i+1} #{@board[i].inspect}" }
   end
   
   
