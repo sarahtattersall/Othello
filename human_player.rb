@@ -6,22 +6,23 @@ class HumanPlayer < Player
       begin
         
         puts "row: "
-        x = (gets).to_i
-        if x == 0 || !board.valid_row?(x)
+        x = ((gets).to_i )- 1
+        if !board.valid_row?(x)
           puts error_message
+          puts "row"
           next
         end
 
         puts "col: "
-        y = (gets).to_i
-        if y == 0 || !board.valid_col?(y)
+        y = ((gets).to_i)- 1
+        if !board.valid_col?(y)
           puts error_message
           next
         end
-        break if board.legal_move?(x - 1 ,y - 1, self)
+        break if board.legal_move?(x ,y, self)
         puts error_message
       end while true
-      return x - 1, y -1
+      return x, y
     end
 
 end
