@@ -4,7 +4,21 @@ class Player
   
   def initialize(c)
     @color = c
+    @count = 0
   end
+
+  def increment_count
+    @count += 1
+  end
+  
+  def decrement_count
+    @count -= 1
+  end
+
+  def get_count
+    return @count
+  end
+
   
   def can_move?(board)
     for i in (0..(board.size-1))
@@ -26,4 +40,5 @@ class Player
   def to_s
     return symbol
   end
+  
 end

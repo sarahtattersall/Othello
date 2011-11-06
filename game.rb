@@ -3,10 +3,24 @@ require './human_player.rb'
 require './ai_player.rb'
 
 class Game
-  def initialize
-    @board = Board.new
-    @players = [HumanPlayer.new(Player::BLACK),
-      AIPlayer.new(Player::WHITE)]
+    def initialize
+      @board = Board.new
+      @players = []
+      begin
+          puts "Please enter the number of human players you wish to play (1 or 2)"
+          count = (gets).to_i
+          if count == 0 || count > 2
+              puts "Not a valid input. Please try again"
+              next
+          end
+      end while count == 0 || count > 2
+   
+      @players << HumanPlayer.new(Player::BLACK)
+      if count == 1:
+          @players << AIPlayer.new(Player::WHITE)
+      else
+          @players << HumanPlayer(Player::BLACK)
+      end
       place_initial_pieces
     end
 
@@ -23,6 +37,22 @@ class Game
         end
         player = 1 - player
       end
+      if draw?
+        puts "No more moves! It's a draw!"
+      else
+        puts "No more moves! Player #{get_winner} won!"
+      end
+    end
+    
+    def draw?
+      return @players[0].get_count == @players[1].get_count
+    end
+    
+    def get_winner
+      if @players[0].get_count > @players[1].get_count
+        return @players[0]
+      end
+      return @players[1]
     end
     
     def place_initial_pieces

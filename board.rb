@@ -70,7 +70,6 @@ class Board
     return []
   end
   
-  #TODO: this
   def in_bounds?(x, y)
     return valid_row?(x) && valid_row?(y)
   end
