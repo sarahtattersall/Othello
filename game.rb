@@ -19,7 +19,7 @@ class Game
       if count == 1:
           @players << AIPlayer.new(Player::WHITE)
       else
-          @players << HumanPlayer(Player::BLACK)
+          @players << HumanPlayer.new(Player::WHITE)
       end
       place_initial_pieces
     end
