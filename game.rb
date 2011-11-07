@@ -16,11 +16,9 @@ class Game
       end while count < 1 || count > 2
    
       @players << HumanPlayer.new(Player::BLACK)
-      if count == 1:
-          @players << AIPlayer.new(Player::WHITE)
-      else
-          @players << HumanPlayer.new(Player::WHITE)
-      end
+      second_player_type = (count == 1) ? AIPlayer : HumanPlayer
+      @players << second_player_type.new(Player::WHITE)
+      
       place_initial_pieces
     end
 
