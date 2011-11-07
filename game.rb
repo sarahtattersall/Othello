@@ -9,11 +9,11 @@ class Game
       begin
           puts "Please enter the number of human players you wish to play (1 or 2)"
           count = (gets).to_i
-          if count == 0 || count > 2
+          if count < 1 || count > 2
               puts "Not a valid input. Please try again"
               next
           end
-      end while count == 0 || count > 2
+      end while count < 1 || count > 2
    
       @players << HumanPlayer.new(Player::BLACK)
       if count == 1:
