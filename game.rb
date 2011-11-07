@@ -53,6 +53,7 @@ class Game
       return @players[1]
     end
     
+    # Places the initial pieces in the center of the board
     def place_initial_pieces
       x = @board.get_size/2
       y = @board.get_size/2
