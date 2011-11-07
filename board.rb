@@ -6,14 +6,14 @@ class Board
   # which have no owner (blank)
   def initialize(size = 8)
     @size = size
-    @board = Array.new(size) { Array.new(size, Cell.new)}
+    @cells = Array.new(size) { Array.new(size, Cell.new)}
   end
   
   # Replaces the cell at x,y with a new cell owned by player p. 
   # Then fcalls the function to to flip opponents pieces based on the 
   # new cell placement
   def place_piece(x, y, p)
-    @board[x][y] = Cell.new(p)
+    @cells[x][y] = Cell.new(p)
     flip_pieces(x, y, p)
   end
   
@@ -25,7 +25,7 @@ class Board
         to_flip = get_flippable_pieces(x+i, y+j, i, j, p)
         if to_flip.length != 0
           for x,y in to_flip
-            @board[x][y].flip(p)
+            @cells[x][y].flip(p)
           end
         end
       end
@@ -37,9 +37,9 @@ class Board
   def get_flippable_pieces(x, y, x_offset, y_offset, p)
     flip = []
     if in_bounds?(x, y)
-      if @board[x][y].is_occupied? and !@board[x][y].owned_by?(p)
-        while in_bounds?(x, y) && @board[x][y].is_occupied?
-          return flip if @board[x][y].owned_by?(p)
+      if @cells[x][y].is_occupied? and !@cells[x][y].owned_by?(p)
+        while in_bounds?(x, y) && @cells[x][y].is_occupied?
+          return flip if @cells[x][y].owned_by?(p)
           flip << [x,y]
           x += x_offset
           y += y_offset
@@ -52,7 +52,7 @@ class Board
   # Check if move is legal. This is true if it isn't occupied and will result 
   # in some opponent pieces being flipped
   def legal_move?(x, y, p)
-    return false if @board[x][y].is_occupied?
+    return false if @cells[x][y].is_occupied?
     legal = false
     for i in [-1,0,1]
       for j in [-1,0,1]
@@ -69,7 +69,7 @@ class Board
     print "   "
     (0..(@size-1)).map{ |i| print "#{i+1}" + ((i < @size - 1) ? ", " : " ")}
     print "\n"
-    (0..(@size-1)).map { |i| puts "#{i+1} #{@board[i].inspect}" }
+    (0..(@size-1)).map { |i| puts "#{i+1} #{@cells[i].inspect}" }
   end
   
   def in_bounds?(x, y)
@@ -82,10 +82,6 @@ class Board
   
   def valid_col?(y)
     return y >= 0 && y < @size
-  end
-    
-  def get_board
-    return @board
   end
   
   def get_size

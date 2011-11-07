@@ -1,5 +1,9 @@
 require './game'
-
+class Game
+  def get_board
+    @board
+  end
+end
 describe Board do
   let(:game) { Game.new }
   

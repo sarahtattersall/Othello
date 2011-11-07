@@ -1,6 +1,6 @@
 require "./player"
 class HumanPlayer < Player
-    def get_move( board)
+    def get_move(board)
       error_message = "Invalid move, please try again"
       puts "Player #{self}, please enter your move:"
       begin

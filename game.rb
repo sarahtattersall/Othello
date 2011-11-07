@@ -63,8 +63,4 @@ class Game
       @board.place_piece(x, y - 1, @players[1])
       @board.place_piece(x -1, y - 1, @players[0])
     end
-
-    def get_board
-      @board
-    end
   end
