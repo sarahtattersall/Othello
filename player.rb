@@ -21,8 +21,8 @@ class Player
 
   
   def can_move?(board)
-    for i in (0..(board.size-1))
-      for j in (0..(board.size-1))
+    for i in (0..(board.get_size-1))
+      for j in (0..(board.get_size-1))
         return true if board.legal_move?(i, j, self)
       end
     end

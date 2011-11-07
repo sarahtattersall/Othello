@@ -56,8 +56,8 @@ class Game
     end
     
     def place_initial_pieces
-      x = @board.size/2
-      y = @board.size/2
+      x = @board.get_size/2
+      y = @board.get_size/2
       
       @board.place_piece(x, y, @players[0])
       @board.place_piece(x - 1, y, @players[1])
