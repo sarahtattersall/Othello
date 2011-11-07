@@ -1,6 +1,13 @@
 require './board'
 require './player'
 
+class Board
+  # For testing purposes only
+  def change_board( board )
+    @board = board
+  end
+end
+
 describe Board do
   let(:board) { Board.new }
   

@@ -91,9 +91,4 @@ class Board
   def get_size
     return @size
   end
-
-  # For testing purposes only
-  def change_board( board )
-    @board = board
-  end
 end
