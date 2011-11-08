@@ -12,7 +12,6 @@ class Game
       second_player_type = (count == 1) ? AIPlayer : HumanPlayer
       @players << second_player_type.new(Player::WHITE)
       place_initial_pieces
-      @board.testcells(@players[0], @players[1])
     end
     
     def valid_number_human_players(count)

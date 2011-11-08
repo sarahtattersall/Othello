@@ -9,18 +9,6 @@ class Board
     @cells = Array.new(size) { Array.new(size, Cell.new)}
   end
   
-  def testcells(p1,p2)
-    @cells = []
-    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2)]
-    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
-    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
-    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
-    @cells << [Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
-    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p2), Cell.new(p2), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
-    @cells << [Cell.new(p1), Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
-    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p2), Cell.new, Cell.new    , Cell.new    , Cell.new(p1)]
-  end
-  
   # Replaces the cell at x,y with a new cell owned by player p. 
   # Then fcalls the function to to flip opponents pieces based on the 
   # new cell placement
