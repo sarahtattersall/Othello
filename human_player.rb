@@ -24,6 +24,5 @@ class HumanPlayer < Player
       end while true
       return x, y
     end
-
 end
 

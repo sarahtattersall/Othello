@@ -15,9 +15,8 @@ class Cell
   end
 
   def flip(p)
-    @owner.decrement_count
     @owner = p
-    @owner.increment_count
+    return self
   end
 
   def is_occupied?
@@ -28,7 +27,7 @@ class Cell
     return @owner == p
   end
   
-  def set_value(v)
-    @owner = v
+  def set_owner(p)
+    @owner = p
   end
 end

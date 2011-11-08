@@ -6,25 +6,34 @@ class Game
     def initialize
       @board = Board.new
       @players = []
-      begin
-          puts "Please enter the number of human players you wish to play (1 or 2)"
-          count = (gets).to_i
-          if count < 1 || count > 2
-              puts "Not a valid input. Please try again"
-              next
-          end
-      end while count < 1 || count > 2
+      count = get_number_human_players
    
       @players << HumanPlayer.new(Player::BLACK)
       second_player_type = (count == 1) ? AIPlayer : HumanPlayer
       @players << second_player_type.new(Player::WHITE)
-      
       place_initial_pieces
+      @board.testcells(@players[0], @players[1])
     end
-
+    
+    def valid_number_human_players(count)
+      return !(count < 1 || count > 2)
+    end
+    
+    def get_number_human_players
+      begin
+          puts "Please enter the number of human players you wish to play (1 or 2)"
+          count = (gets).to_i
+          if !valid_number_human_players(count)
+              puts "Not a valid input. Please try again"
+              next
+          end
+      end while !valid_number_human_players(count)
+      return count
+    end
+    
     def play
       player = 0
-      while @players.map{ |p| p.can_move?(@board) }.any?
+      while players_can_move
         p = @players[player]
         @board.display_board
         if p.can_move?(@board)
@@ -35,19 +44,29 @@ class Game
         end
         player = 1 - player
       end
+      
+      # Neither player can move
       if draw?
-        puts "No more moves! It's a draw!"
+        puts "No more moves, It's a draw!"
       else
-        puts "No more moves! Player #{get_winner} won!"
+        p1score = @board.count_player_pieces(@players[0])
+        p2score = @board.count_player_pieces(@players[1])
+        winscore = p1score > p2score ? p1score : p2score
+        losescore = p1score > p2score ? p2score : p1score
+        puts "No more moves, Player #{get_winner} won #{winscore}-#{losescore}!"
       end
     end
     
+    def players_can_move
+      return @players.map{ |p| p.can_move?(@board) }.any?
+    end
+    
     def draw?
-      return @players[0].get_count == @players[1].get_count
+      return @board.count_player_pieces(@players[0]) == @board.count_player_pieces(@players[1])
     end
     
     def get_winner
-      if @players[0].get_count > @players[1].get_count
+      if @board.count_player_pieces(@players[0]) > @board.count_player_pieces(@players[1])
         return @players[0]
       end
       return @players[1]

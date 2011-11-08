@@ -9,6 +9,18 @@ class Board
     @cells = Array.new(size) { Array.new(size, Cell.new)}
   end
   
+  def testcells(p1,p2)
+    @cells = []
+    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2)]
+    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
+    @cells << [Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
+    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p2), Cell.new(p1)]
+    @cells << [Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
+    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p2), Cell.new(p2), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
+    @cells << [Cell.new(p1), Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1), Cell.new(p1)]
+    @cells << [Cell.new(p1), Cell.new(p2), Cell.new(p1), Cell.new(p2), Cell.new, Cell.new    , Cell.new    , Cell.new(p1)]
+  end
+  
   # Replaces the cell at x,y with a new cell owned by player p. 
   # Then fcalls the function to to flip opponents pieces based on the 
   # new cell placement
@@ -62,6 +74,16 @@ class Board
       end
     end
     return legal
+  end
+  
+  def count_player_pieces(p)
+    count = 0
+    for i in (0..@size-1)
+      for j in (0..@size-1)
+        count += 1 if @cells[i][j].owned_by?(p)
+      end
+    end
+    return count
   end
   
   # Outputs the board to the console (Simple Gui)
