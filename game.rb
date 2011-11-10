@@ -32,12 +32,12 @@ class Game
     end
     
     def valid_board_size?(size)
-      return !(size < 6 || size > 20) && (size % 2 == 0)
+      return !(size < 4 || size > 20) && (size % 2 == 0)
     end
     
     def get_board_size
       begin
-          puts "Please enter a board size (6-20) squared:"
+          puts "Please enter a board size (4-20) squared:"
           size = (gets).to_i
           if !valid_board_size?(size)
               puts "Not a valid board size. Please try again"
