@@ -4,7 +4,6 @@ class Player
   
   def initialize(c)
     @color = c
-    @count = 0
   end
   
   def can_move?(board)

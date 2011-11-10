@@ -6,6 +6,10 @@ class Game
   def get_number_human_players
     return 2
   end
+  
+  def get_board_size
+    return 8 # standard size
+  end
 end
 
 class Board

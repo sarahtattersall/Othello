@@ -49,9 +49,9 @@ describe Cell do
   end
 
   it "should be able to set the owner" do
-    cn.set_owner(p1).should == p1
-    cn.set_owner(p2).should == p2
-    c2.set_owner(p1).should == p1
-    c1.set_owner(p2).should == p2
+    cn.set_owner(p1).owner.should == p1
+    cn.set_owner(p2).owner.should == p2
+    c2.set_owner(p1).owner.should == p1
+    c1.set_owner(p2).owner.should == p2
   end
 end

@@ -9,7 +9,6 @@ class HumanPlayer < Player
         x = ((gets).to_i )- 1
         if !board.valid_row?(x)
           puts error_message
-          puts "row"
           next
         end
 

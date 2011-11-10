@@ -1,7 +1,6 @@
 require './cell.rb'
 
 class Board
-  
   # Initialises the board with dimensions size * size and fills it with cells 
   # which have no owner (blank)
   def initialize(size = 8)

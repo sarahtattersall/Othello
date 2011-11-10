@@ -14,13 +14,13 @@ describe Game, "In it's newly created state" do
   end
   
   it "correctly validates the number of human players allowed" do
-    game.valid_number_human_players(-1000).should == false
-    game.valid_number_human_players(-1).should == false
-    game.valid_number_human_players(0).should == false
-    game.valid_number_human_players(1).should == true
-    game.valid_number_human_players(2).should == true
-    game.valid_number_human_players(3).should == false
-    game.valid_number_human_players(1000).should == false
+    game.valid_number_human_players?(-1000).should == false
+    game.valid_number_human_players?(-1).should == false
+    game.valid_number_human_players?(0).should == false
+    game.valid_number_human_players?(1).should == true
+    game.valid_number_human_players?(2).should == true
+    game.valid_number_human_players?(3).should == false
+    game.valid_number_human_players?(1000).should == false
   end
   
   it "places initial pieces correctly" do
@@ -56,7 +56,7 @@ describe Game, "In the middle of gameplay" do
   end
   
   it "correctly identifies whether one or both players can move" do
-    game.players_can_move.should == true
+    game.players_can_move?.should == true
   end
 end
 
@@ -79,7 +79,7 @@ describe Game, "In a winning game state" do
   end
   
   it "correctly identifies whether one or both players can move" do
-    game.players_can_move.should == false
+    game.players_can_move?.should == false
   end
   
   it "correctly identifies the winner" do
@@ -99,7 +99,7 @@ describe Game, "In an drawing game state" do
   end
   
   it "correctly identifies whether one or both players can move" do
-    game.players_can_move.should == false
+    game.players_can_move?.should == false
   end
   
   it "correctly identifies a draw" do

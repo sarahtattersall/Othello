@@ -56,9 +56,9 @@
 			<integer>466</integer>
 			<key>Points</key>
 			<array>
-				<string>{96, 203.93555}</string>
-				<string>{96.5, 102.1312}</string>
-				<string>{210.5, 102.1312}</string>
+				<string>{96, 248.93555}</string>
+				<string>{96.5, 147.1312}</string>
+				<string>{180.5, 147.1312}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -80,9 +80,9 @@
 			<integer>465</integer>
 			<key>Points</key>
 			<array>
-				<string>{420, 203.93555}</string>
-				<string>{420.5, 102.1312}</string>
-				<string>{349, 102}</string>
+				<string>{420, 248.93555}</string>
+				<string>{420, 147.1312}</string>
+				<string>{360, 147.1312}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -104,8 +104,8 @@
 			<integer>386</integer>
 			<key>Points</key>
 			<array>
-				<string>{461, 481.54688}</string>
-				<string>{461, 403.93555}</string>
+				<string>{461, 526.54688}</string>
+				<string>{461, 461.93555}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -127,9 +127,9 @@
 			<integer>464</integer>
 			<key>Points</key>
 			<array>
-				<string>{94, 444}</string>
-				<string>{284, 444}</string>
-				<string>{284, 481.54688}</string>
+				<string>{94, 491}</string>
+				<string>{284, 491}</string>
+				<string>{284, 526.54688}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -146,7 +146,7 @@
 				<key>ID</key>
 				<integer>165</integer>
 				<key>Position</key>
-				<real>0.48378080129623413</real>
+				<real>0.27425745129585266</real>
 			</dict>
 		</dict>
 		<dict>
@@ -167,8 +167,8 @@
 			<real>-1</real>
 			<key>Points</key>
 			<array>
-				<string>{94, 481.54688}</string>
-				<string>{94, 403.93555}</string>
+				<string>{94, 526.54688}</string>
+				<string>{94, 396.93555}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -195,7 +195,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{180.5, 481.54688}, {198, 24}}</string>
+					<string>{{180.5, 526.54688}, {198, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -234,7 +234,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{180.5, 505.54688}, {198, 22}}</string>
+					<string>{{180.5, 550.54688}, {198, 22}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -268,7 +268,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{180.5, 527.54688}, {198, 36}}</string>
+					<string>{{180.5, 572.54688}, {198, 36}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -328,7 +328,7 @@ move_with_simple_intelligence(board)}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 481.54688}, {138, 24}}</string>
+					<string>{{25, 526.54688}, {138, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -367,7 +367,7 @@ move_with_simple_intelligence(board)}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 505.54688}, {138, 22}}</string>
+					<string>{{25, 550.54688}, {138, 22}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -401,7 +401,7 @@ move_with_simple_intelligence(board)}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 527.54688}, {138, 23}}</string>
+					<string>{{25, 572.54688}, {138, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -460,7 +460,7 @@ move_with_simple_intelligence(board)}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 203.93555}, {138, 24}}</string>
+					<string>{{25, 248.93555}, {138, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -499,7 +499,7 @@ move_with_simple_intelligence(board)}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 227.93555}, {138, 62}}</string>
+					<string>{{25, 272.93555}, {138, 49}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -535,15 +535,14 @@ move_with_simple_intelligence(board)}</string>
 
 \f0\fs22 \cf0 WHITE = 0\
 BLACK = 1\
-color\
-count}</string>
+color}</string>
 					</dict>
 					<key>TextPlacement</key>
 					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{25, 289.93555}, {138, 114}}</string>
+					<string>{{25, 321.93555}, {138, 75}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -578,9 +577,6 @@ count}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
 \f0\fs22 \cf0 initialize(c)\
-increment_count()\
-decrement_count()\
-get_count()\
 can_move?(board)\
 inspect()\
 symbol()\
@@ -609,7 +605,7 @@ to_s()}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{396, 481.54688}, {138, 24}}</string>
+					<string>{{396, 526.54688}, {138, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -648,7 +644,7 @@ to_s()}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{396, 505.54688}, {138, 23}}</string>
+					<string>{{396, 550.54688}, {138, 23}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -689,7 +685,7 @@ to_s()}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{396, 528.54688}, {138, 88}}</string>
+					<string>{{396, 573.54688}, {138, 88}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -728,7 +724,7 @@ inspect()\
 flip(p)\
 is_occupied?()\
 owned_by?(p)\
-set_value(v)}</string>
+set_owner(p)}</string>
 					</dict>
 					<key>TextPlacement</key>
 					<integer>0</integer>
@@ -753,7 +749,7 @@ set_value(v)}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{302, 203.93555}, {237, 24}}</string>
+					<string>{{302, 248.93555}, {237, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -792,7 +788,7 @@ set_value(v)}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{302, 227.93555}, {237, 36}}</string>
+					<string>{{302, 272.93555}, {237, 36}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -834,7 +830,7 @@ cells}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{302, 263.93555}, {237, 140}}</string>
+					<string>{{302, 308.93555}, {237, 153}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -873,6 +869,7 @@ place_piece(x, y, p)\
 flip_pieces(x, y, p)\
 get_flippable_pieces(x, y, x_offset, y_offset, p)\
 legal_move?(x, y, p)\
+count_player_pieces(p)\
 display_board()\
 in_bounds?(x, y)\
 valid_row?(x)\
@@ -902,7 +899,7 @@ get_size()}</string>
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{210.5, 19.742188}, {138, 24}}</string>
+					<string>{{180.5, 15}, {179.5, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -941,7 +938,7 @@ get_size()}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{210.5, 43.742188}, {138, 36}}</string>
+					<string>{{180.5, 39}, {179.5, 36}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -983,7 +980,7 @@ players}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{210.5, 79.742188}, {138, 62}}</string>
+					<string>{{180.5, 75}, {179.5, 140}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1018,9 +1015,15 @@ players}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
 \f0\fs22 \cf0 initialize()\
+valid_number_human_players?()\
+get_number_human_players()\
+valid_board_size?()\
+get_board_size()\
 play()\
+players_can_move?()\
 draw?()\
-get_winner()}</string>
+get_winner()\
+place_initial_pieces()}</string>
 					</dict>
 					<key>TextPlacement</key>
 					<integer>0</integer>
@@ -1086,7 +1089,7 @@ get_winner()}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2011-11-07 15:03:53 +0000</string>
+	<string>2011-11-10 13:12:58 +0000</string>
 	<key>Modifier</key>
 	<string>Peter Hamilton</string>
 	<key>NotesVisible</key>
@@ -1167,7 +1170,7 @@ get_winner()}</string>
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{520, 90}, {744, 938}}</string>
+		<string>{{424, 89}, {744, 938}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>

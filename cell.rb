@@ -29,5 +29,6 @@ class Cell
   
   def set_owner(p)
     @owner = p
+    return self
   end
 end

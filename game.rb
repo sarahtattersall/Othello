@@ -4,17 +4,18 @@ require './ai_player.rb'
 
 class Game
     def initialize
-      @board = Board.new
       @players = []
       count = get_number_human_players
-   
       @players << HumanPlayer.new(Player::BLACK)
       second_player_type = (count == 1) ? AIPlayer : HumanPlayer
       @players << second_player_type.new(Player::WHITE)
+      
+      size = get_board_size
+      @board = Board.new(size)
       place_initial_pieces
     end
     
-    def valid_number_human_players(count)
+    def valid_number_human_players?(count)
       return !(count < 1 || count > 2)
     end
     
@@ -22,17 +23,33 @@ class Game
       begin
           puts "Please enter the number of human players you wish to play (1 or 2)"
           count = (gets).to_i
-          if !valid_number_human_players(count)
+          if !valid_number_human_players?(count)
               puts "Not a valid input. Please try again"
               next
           end
-      end while !valid_number_human_players(count)
+      end while !valid_number_human_players?(count)
       return count
+    end
+    
+    def valid_board_size?(size)
+      return !(size < 6 || size > 20) && (size % 2 == 0)
+    end
+    
+    def get_board_size
+      begin
+          puts "Please enter a board size (6-20) squared:"
+          size = (gets).to_i
+          if !valid_board_size?(size)
+              puts "Not a valid board size. Please try again"
+              next
+          end
+      end while !valid_board_size?(size)
+      return size
     end
     
     def play
       player = 0
-      while players_can_move
+      while players_can_move?
         p = @players[player]
         @board.display_board
         if p.can_move?(@board)
@@ -56,7 +73,7 @@ class Game
       end
     end
     
-    def players_can_move
+    def players_can_move?
       return @players.map{ |p| p.can_move?(@board) }.any?
     end
     
