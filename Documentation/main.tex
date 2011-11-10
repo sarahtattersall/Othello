@@ -74,7 +74,7 @@
   counting the pieces owned by each at the end.
 
   \subsubsection{Human Player}
-  We decided to implement the human player `get_move' method asking for rows and columns separately so that the input is kept as simple as possible. We use the Ruby 
+  We decided to implement the human player `get\_move' method asking for rows and columns separately so that the input is kept as simple as possible. We use the Ruby 
   method `to\_i' which casts the input to an int. If the input is not an int it returns 0. This works well for our design as we ask for cell indexes from the user
   to be from 1 upwards. Thus when we subtract one to turn it into array indicies 0 is out of bounds and will fail the inbounds error checking. When a user enters
   a row we decide to check that it is inbounds before allowing them to enter a column so that they instantly know if they have made an error. Once the cell has
@@ -408,17 +408,15 @@ row:
 6
 col: 
 7
-
-   1, 2, 3, 4, 5, 6, 7, 8 
-1 [X, X, X, X, X, X, X, X]
-2 [X, X, X, X, X, X, X, X]
-3 [X, X, X, X, X, X, X, X]
-4 [X, X, X, X, X, X, X,  ]
-5 [X, X, X, X, X, X,  ,  ]
-6 [X, X, X, X, X, X, X, O]
-7 [X, X, X, X, X, X, X,  ]
-8 [X, X, X, X, X, X, X, X]
 No more moves, Player X won 59-1!
+
+
+
+
+
+
+
+
           \end{verbatim}
         \end{scriptsize}
       \end{minipage}
@@ -464,3 +462,4 @@ Please enter a board size (4-20) squared:
   \bibliography{references.bib}
 
 \end{document}
+​
