@@ -18,10 +18,10 @@ describe Board, "on default creation" do
 end
 
 describe Board, "on variable board size creation" do
-  let(:board) { Board.new(120) } # Default 8x8 board
+  let(:board) { Board.new(20) } # Default 8x8 board
 
-  it "size should be 120x120" do
-    board.size.should == 120
+  it "size should be 20x20" do
+    board.size.should == 20
   end
 
   it "size should be the same as the height of the board" do
