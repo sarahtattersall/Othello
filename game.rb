@@ -62,6 +62,7 @@ class Game
       end
       
       # Neither player can move
+      @board.display_board
       if draw?
         puts "No more moves, It's a draw!"
       else

@@ -24,19 +24,19 @@ describe Game, "In it's newly created state" do
   end
 
   it "correctly validates the board size" do
-    game.valid_number_human_players?(-1000).should == false
-    game.valid_number_human_players?(-1).should == false
-    game.valid_number_human_players?(0).should == false
-    game.valid_number_human_players?(1).should == false
-    game.valid_number_human_players?(2).should == false
-    game.valid_number_human_players?(3).should == false
-    game.valid_number_human_players?(4).should == true
-    game.valid_number_human_players?(8).should == true
-    game.valid_number_human_players?(10).should == true
-    game.valid_number_human_players?(20).should == true
-    game.valid_number_human_players?(35).should == false
-    game.valid_number_human_players?(100).should == false
-    game.valid_number_human_players?(1000).should == false
+    game.valid_board_size?(-1000).should == false
+    game.valid_board_size?(-1).should == false
+    game.valid_board_size?(0).should == false
+    game.valid_board_size?(1).should == false
+    game.valid_board_size?(2).should == false
+    game.valid_board_size?(3).should == false
+    game.valid_board_size?(4).should == true
+    game.valid_board_size?(8).should == true
+    game.valid_board_size?(10).should == true
+    game.valid_board_size?(20).should == true
+    game.valid_board_size?(35).should == false
+    game.valid_board_size?(100).should == false
+    game.valid_board_size?(1000).should == false
   end
 
   it "places initial pieces correctly" do
